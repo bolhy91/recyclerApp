@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "355594908858",
+    "project_id": "recyclerapp-4ddcb",
+    "storage_bucket": "recyclerapp-4ddcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355594908858:android:d969999e1878c93a4cbe83",
+        "android_client_info": {
+          "package_name": "com.bolhy91.recyclerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355594908858-k9ost5aia405fhoqai9e04f38bpcm0k8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE2ukAyCzbog7lgXIQjlw7CfDRUdFE9Jg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355594908858-k9ost5aia405fhoqai9e04f38bpcm0k8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
