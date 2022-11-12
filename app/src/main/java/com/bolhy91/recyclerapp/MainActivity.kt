@@ -1,8 +1,12 @@
 package com.bolhy91.recyclerapp
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -34,7 +38,9 @@ class MainActivity : ComponentActivity() {
                     BaseLayoutScreen(
                         navController = navController, selectedItemIndexMenu = selectedItemIndexMenu
                     ) {
-                        RecyclerNavGraph(navController = navController)
+                        RecyclerNavGraph(
+                            navController = navController, activity = this@MainActivity
+                        )
                     }
                 }
             }
