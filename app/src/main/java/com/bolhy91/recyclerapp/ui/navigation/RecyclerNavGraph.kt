@@ -17,7 +17,7 @@ fun RecyclerNavGraph(navController: NavHostController, activity: Activity) {
         navController = navController, startDestination = Destination.Notices.route
     ) {
         notices()
-        places()
+        places(activity)
         settings(activity)
     }
 }
@@ -28,7 +28,8 @@ fun NavGraphBuilder.notices() {
     }
 }
 
-fun NavGraphBuilder.places() {
+fun NavGraphBuilder.places(activity: Activity) {
+    
     composable(route = Destination.Places.route) {
         PlaceScreen()
     }

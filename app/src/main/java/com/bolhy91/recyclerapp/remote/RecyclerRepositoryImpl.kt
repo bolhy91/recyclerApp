@@ -15,8 +15,6 @@ import javax.inject.Singleton
 class RecyclerRepositoryImpl @Inject constructor(
     private val recyclerApi: RecyclerApi
 ) {
-    val firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
-
     suspend fun getNotices(): Flow<Resource<List<NoticeListDto>>> {
         return flow {
             emit(Resource.Loading(true))
@@ -38,4 +36,27 @@ class RecyclerRepositoryImpl @Inject constructor(
             }
         }
     }
+
+    suspend fun getPlaces(): Flow<Resource<List<PlaceListDto>>> {
+        return flow {
+            emit(Resource.Loading(true))
+            val remoteProducts = try {
+                val results = recyclerApi.getPlaces()
+                results
+            } catch (e: HttpException) {
+                e.printStackTrace()
+                emit(Resource.Error("couldn't load data ${e.message}"))
+                null
+            } catch (e: IOException) {
+                e.printStackTrace()
+                emit(Resource.Error("couldn't load data http: ${e.message}"))
+                null
+            }
+            remoteProducts?.let { results ->
+                emit(Resource.Success(data = results))
+                emit(Resource.Loading(false))
+            }
+        }
+    }
+
 }
